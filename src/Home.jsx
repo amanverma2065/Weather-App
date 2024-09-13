@@ -23,9 +23,6 @@ import visibility from "./png/visibility.png";
 
 const Home = () => {
 
-    const [latitude, setLatitude] = useState();
-    const [longitude, setLongitude] = useState();
-
     const [apiData, setApiData] = useState({});
     const [search, setSearch] = useState("delhi");
     const [inputValue, setInputValue] = useState();
@@ -34,24 +31,7 @@ const Home = () => {
     const [background, setBackground] = useState();
     const date = new Date();
     
-
-    async function success(position) {
-        console.log(position);
-        setLatitude(position.coords.latitude);
-        setLongitude(position.coords.longitude);
-        const locationResponse =await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=e4d1dcc0c26d565b489f87175092bee2`);
-        const jsonLocationResponse =await locationResponse.json();
-        console.log(jsonLocationResponse);
-    }
-
-    function failed() {
-        console.log("There is an error");
-    }
-
-    async function getCurrentLocation() {
-        const result = await navigator.geolocation.getCurrentPosition(success, failed);
-    }
-
+    
     const fetchData = async () => {
         try {
             const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${search}&appid=e4d1dcc0c26d565b489f87175092bee2`;
