@@ -31,7 +31,7 @@ const Home = () => {
     const [background, setBackground] = useState();
     const date = new Date();
     
-    
+
     const fetchData = async () => {
         try {
             const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${search}&appid=e4d1dcc0c26d565b489f87175092bee2`;
@@ -128,10 +128,6 @@ const Home = () => {
             console.log(error);
         }
     }
-
-    useEffect(() => {
-        getCurrentLocation();
-    }, []);
 
     useEffect(() => {
         fetchData();
