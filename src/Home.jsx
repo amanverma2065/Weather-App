@@ -140,7 +140,7 @@ const Home = () => {
                     <div className="col-lg-8 d-flex flex-column justify-content-between" style={{ minHeight: '50vh' }}>
                         <div className="d-flex m-md-5 mx-2 my-3">
                             <input className="w-100 p-2 " type="search" placeholder="Search Location..." onChange={(event) => { setInputValue(event.target.value) }} style={{ border: 'none', outline: 'none', background: 'transparent', borderBottom: '2px solid white', color: 'white' }} />
-                            <div className="btn ms-3" onClick={() => { setSearch(inputValue) }} style={{ border: 'none' }} >
+                            <div className="btn ms-3" onClick={() => { setSearch(inputValue.trim()) }} style={{ border: 'none' }} >
                                 <img src={searchIcon} alt="icon" style={{ maxHeight: '4vh' }} />
                             </div>
                         </div>
